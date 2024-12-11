@@ -10,7 +10,7 @@ const useGetAllMessage = () => {
     const fetchAllMessage = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/v1/message/all/${selectedUser?._id}`,
+          `${import.meta.env.VITE_APP_BASE_URL}/api/v1/message/all/${selectedUser?._id}`,
           { withCredentials: true }
         );
         if (res.data.success) {

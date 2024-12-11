@@ -50,7 +50,7 @@ const EditProfile = () => {
     try {
       setloading(true);
       const res = await axios.post(
-        `http://localhost:8000/api/v1/user/${user?._id}/profile`,
+        `${import.meta.env.VITE_APP_BASE_URL}/api/v1/user/${user?._id}/profile`,
         formData,
         {
           headers: {

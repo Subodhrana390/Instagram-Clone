@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Signup = () => {
   const [input, setInput] = useState({ username: "", email: "", password: "" });
@@ -22,7 +23,7 @@ const Signup = () => {
     try {
       setloading(true);
       const res = await axios.post(
-        "http://localhost:8000/api/v1/user/register",
+        `${import.meta.env.VITE_APP_BASE_URL}/api/v1/user/register`,
         input,
         {
           headers: {

@@ -8,7 +8,7 @@ const useGetAllPosts = () => {
   useEffect(() => {
     const fetchAllPost = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/v1/post/all", {
+        const res = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/post/all`, {
           withCredentials: true,
         });
         if (res.data.success) {
